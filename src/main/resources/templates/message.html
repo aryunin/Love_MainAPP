@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>I love you</title>
+    <link type="image/x-icon" rel="shortcut icon" th:href="@{/images/ico.ico}">
+    <style>
+        body {
+            background-color: #FFAFC2;
+        }
+        .container {
+            display: inline-block;
+            position: absolute;
+            text-align: center;
+            color: white;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .container h1 {
+            position: absolute;
+            top: 39%;
+            left: 50%;
+            width: 80%;
+            font-size: 240%;
+            transform: translate(-50%, -50%);
+        }
+        .container h2.date {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .container h2.time {
+            position: absolute;
+            top: 78%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img th:src="@{/images/heart.png}" width="950" height="950" alt="">
+    <h1 th:text="${message.getText()}"></h1>
+    <h2 class="date" th:text="${message.getFormatedDate()}"></h2>
+    <h2 class="time" th:text="${message.getFromatedTime()}"></h2>
+</div>
+
+</body>
+</html>
